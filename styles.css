@@ -1,0 +1,253 @@
+:root {
+  --bg: #f4f9ff;
+  --card: #ffffff;
+  --primary: #8ecae6;
+  --accent: #219ebc;
+  --text: #023047;
+}
+
+body.dark {
+  --bg: #0a192f;
+  --card: #112240;
+  --primary: #8ecae6;
+  --accent: #64ffda;
+  --text: #e6f1ff;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--card);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+.logo {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+#theme-toggle {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* HOME */
+.home {
+  text-align: center;
+}
+
+.profile-img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ABOUT */
+.about-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.about-images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: transform 0.3s;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+}
+
+.about-list {
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-grid .card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-grid .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.skill-img {
+  width: 185px;
+  height: 200px;
+  object-fit: contain;
+  margin: 15px auto;
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+}
+
+/* PROJECTS */
+.project-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+}
+
+/* LIFESTYLE - SIDE BY SIDE */
+.lifestyle-flex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* wrap on mobile */
+  margin-bottom: 1rem;
+}
+
+.lifestyle-flex img {
+  width: 250px; /* fixed width, side by side */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: transform 0.3s;
+}
+
+.lifestyle-flex img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .profile-img {
+    width: 150px;
+  }
+
+  .about-images {
+    gap: 15px;
+  }
+
+  .about-img {
+    width: 150px;
+  }
+
+  .skill-img {
+    width: 120px;
+    height: 140px;
+  }
+
+  .lifestyle-flex img {
+    width: 150px; /* wrap images on mobile */
+  }
+}
